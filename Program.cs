@@ -1,4 +1,5 @@
 using AuthApi.Models;
+using AuthApi.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,9 @@ builder.Services.AddSwaggerGen();
 
 // Add configuration for controllers
 builder.Services.AddControllers();
+
+// Add services
+builder.Services.AddScoped<IUserService, UserService>();
 
 var app = builder.Build();
 
