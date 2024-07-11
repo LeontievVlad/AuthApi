@@ -34,7 +34,6 @@ namespace AuthApi.Services
             await _hubContext.Clients.All.SendAsync("ReceiveNotification", userId, message);
         }
 
-
         public async Task<List<string>> GetNotificationAsync(int userId)
         {
             return await _context.Notifications
